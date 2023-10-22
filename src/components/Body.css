@@ -6,3 +6,31 @@
     margin-right: 15%;
     justify-content: space-between;
 }
+.searchBar{
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: 35%;
+}
+.search-input{
+    padding: 0.5rem;
+    width: 18rem;
+    text-align: center;
+    margin: 0;
+    border: 2px solid #3142A1;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+.search-btn{
+    padding:0.5rem 0.65rem;
+    color: white;
+    background-color: rgb(68, 194, 137);
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    font-weight: 500;
+}
+.search-btn:hover{
+    cursor: pointer;
+    background-color: black;
+    transition:  0.8s;
+}

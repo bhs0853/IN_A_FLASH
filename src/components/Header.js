@@ -4,14 +4,9 @@ import { RestaurantList } from "../config";
 import "./Header.css";
 
 
-function search(key){
-  const names = RestaurantList.map((Restaurant) => {
-    return Restaurant.info.name;
-  });
-};
 
+//pass the restaurant list to body
 const Header = () => {
-  const [searchText, setSearchText] = useState();
   return (
     <div id="header" key="header">
       <div className="left-header" key="left-header">
@@ -20,17 +15,7 @@ const Header = () => {
           <h3 className="logo-text">IN A FLASH</h3>
         </a>
       </div>
-      <div className="searchBar" key="searchBar">
-        <input
-          className="search-input"
-          value={searchText}
-          placeholder="Find Out......"
-          onChange={(e)=>{
-            setSearchText(e.target.value);
-          }}
-        ></input>
-        <button className="search-btn" onClick={search}>Search</button>
-      </div>
+      
       <div className="right-header" key="rightHeader">
         <ul className="right-header">
           <li>Home</li>
@@ -41,6 +26,5 @@ const Header = () => {
       </div>
     </div>
   );
-}   
-
+};
 export default Header;
