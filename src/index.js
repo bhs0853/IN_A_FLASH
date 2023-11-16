@@ -3,7 +3,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
+import Contact from "./components/Contact";
+import About from "./components/About"
 import Footer from "./components/Footer";
+import { BrowserRouter,RouterProvider,Outlet, createBrowserRouter } from "react-router-dom";
 /**
  * Build a Food Ordering App
 Think of a cool name for your app - In a flash
@@ -39,15 +42,38 @@ Use Array.map to render all the restaurants
  
 //   </div>
 // );
-
 const AppLayout = function () {
   return (
     <>
       <Header/>
-      <Body />
+      <Outlet />
       {/* {Footer} */}
     </>
   );
 };
+
+
+const AppRouter = createBrowserRouter([
+  {
+    path:"/",
+    element: <AppLayout />,
+    children: [
+      {
+        path :"/",
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contactus",
+        element: <Contact />
+      }
+      
+    ],
+    errorElement : <Error />
+  }
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={AppRouter}/>);

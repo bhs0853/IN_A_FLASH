@@ -6,7 +6,7 @@ import "./RestaurantCard.css";
  * name
  * cuisines
  * rating
- */
+*/
 const RestaurantCard = ({cloudinaryImageId, name, avgRating, costForTwo,cuisines, areaName}) => {
   const image = IMG_URL + cloudinaryImageId;
   return (

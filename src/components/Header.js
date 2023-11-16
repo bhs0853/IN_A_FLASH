@@ -1,11 +1,9 @@
-import { useState } from "react";
 import Logo from "../../assests/logo-trans-white.svg";
-import { RestaurantList } from "../config";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
+//brainstorm hoe to pass the restaurant list to body
 
-
-//pass the restaurant list to body
 const Header = () => {
   return (
     <div id="header" key="header">
@@ -18,10 +16,10 @@ const Header = () => {
       
       <div className="right-header" key="rightHeader">
         <ul className="right-header">
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li className="cart">Cart</li>
+          <li ><Link to="/" className="app-route">Home</Link></li>
+          <li><Link to="/about" className="app-route">About us</Link></li>
+          <li><Link to="/contactus" className="app-route">Contact us</Link></li>
+          <li><Link className="cart app-route">Cart</Link></li>
         </ul>
       </div>
     </div>
