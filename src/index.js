@@ -4,9 +4,11 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
-import About from "./components/About"
+import About from "./components/About";
 import Footer from "./components/Footer";
-import { BrowserRouter,RouterProvider,Outlet, createBrowserRouter } from "react-router-dom";
+import Profile from "./components/ProfileClassComponent";
+import RestaurantMenu from "./components/RestaurantMenu";
+import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 /**
  * Build a Food Ordering App
 Think of a cool name for your app - In a flash
@@ -42,6 +44,7 @@ Use Array.map to render all the restaurants
  
 //   </div>
 // );
+
 const AppLayout = function () {
   return (
     <>
@@ -64,16 +67,26 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />
+        element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile/>
+          }
+        ]
       },
       {
         path: "/contactus",
         element: <Contact />
+      },
+      {
+        path : "/restaurants/:resId",
+        element: <RestaurantMenu/>
       }
-      
     ],
-    errorElement : <Error />
+    // errorElement : <Error />
   }
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={AppRouter}/>);
+// root.render(<RestaurantMenu/>)

@@ -7,6 +7,7 @@ import "./RestaurantCard.css";
  * cuisines
  * rating
 */
+
 const RestaurantCard = ({cloudinaryImageId, name, avgRating, costForTwo,cuisines, areaName}) => {
   const image = IMG_URL + cloudinaryImageId;
   return (
@@ -22,4 +23,8 @@ const RestaurantCard = ({cloudinaryImageId, name, avgRating, costForTwo,cuisines
   );
 };
 
+/**
+ * rgb model 
+ * 128 bit 
+ */
 export default RestaurantCard;

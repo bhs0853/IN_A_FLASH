@@ -34,3 +34,16 @@
     background-color: black;
     transition:  0.8s;
 }
+.link-card{
+    width: 20%;
+    max-height: 42vh;
+    margin:0.5rem 0.1rem;
+    padding: 0.3rem;
+    border-radius: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.1rem;
+    overflow: visible;
+    text-decoration: none;
+    color: black;
+}
