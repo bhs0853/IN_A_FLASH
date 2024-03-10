@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { RestaurantList } from "../config.js";
 import { Link } from "react-router-dom";
 import ShimmerUI from "./Shimmer.js";
+import useOnline from "../utils/useOnline.js";
 import "./Body.css"
 import "./Header.css"
 
@@ -41,10 +42,10 @@ const Body = () => {
     const [allRestaurant, setAllRestaurant] = useState([]);
     useEffect(() => {
         fetchData();
-        const timer = setInterval(()=>{
-            console.log("interval running")
-        },1000);
-        return () => {clearInterval(timer)};
+        // const timer = setInterval(()=>{
+        //     console.log("interval running")
+        // },1000);
+        // return () => {clearInterval(timer)};
     },[]);
     async function fetchData(){
         const response = await fetch( "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6851243&lng=83.2035471");
@@ -53,6 +54,15 @@ const Body = () => {
         setAllRestaurant(jsonResponse?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(jsonResponse?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         // console.log(jsonResponse?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    }
+    const isOnline = useOnline();
+    if(!isOnline){
+        return(
+            <div key="offline" className="isonline-container">
+                <h1 key="head1 ">🔴Looks you are offline!!!</h1>
+                <p key="para1">Please check your internet Connection</p>
+            </div>
+        );
     }
     return allRestaurant?.length==0 ? <ShimmerUI /> : (
         <>
@@ -74,20 +84,18 @@ const Body = () => {
                 </button>
             </div>
             <div id="hero-container" key="heroContainer">
-                <>
-                    {filteredRestaurant?.map((Restaurant) => {
-                        <Link key={Restaurant.info.id} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard {...Restaurant.info} /></Link>
-                    })}
-                    {filteredRestaurant?.map((Restaurant) => {
-                        return <Link  to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard key={Restaurant.info.id} {...Restaurant.info} /></Link>
-                    })}
-                    {filteredRestaurant?.map((Restaurant) => {
-                        return <Link key={Restaurant.info.id} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard {...Restaurant.info} /></Link>
-                    })}
-                    {filteredRestaurant?.map((Restaurant) => {
-                        return <Link key={Restaurant.info.id} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard {...Restaurant.info} /></Link>
-                    })}
-                </>                    
+                {filteredRestaurant?.map((Restaurant) => {
+                    return <Link key={Restaurant.info.id} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard {...Restaurant.info} /></Link>
+                })}
+                {filteredRestaurant?.map((Restaurant) => {
+                    return <Link key={Restaurant.info.id + "1"} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard  {...Restaurant.info} /></Link>
+                })}
+                {filteredRestaurant?.map((Restaurant) => {
+                    return <Link key={Restaurant.info.id +"2"} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard {...Restaurant.info} /></Link>
+                })}
+                {filteredRestaurant?.map((Restaurant) => {
+                    return <Link key={Restaurant.info.id+"3"} to={"/restaurants/"+Restaurant.info.id} className="link-card"><RestaurantCard {...Restaurant.info} /></Link>
+                })}                   
             </div>
         </>
     )
