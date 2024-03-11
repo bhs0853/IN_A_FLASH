@@ -1,4 +1,3 @@
-import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
@@ -47,11 +46,11 @@ Use Array.map to render all the restaurants
 
 const AppLayout = function () {
   return (
-    <>
+    <div >
       <Header/>
       <Outlet />
       {/* {Footer} */}
-    </>
+    </div>
   );
 };
 

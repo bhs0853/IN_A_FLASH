@@ -3,7 +3,7 @@
 
 //image cloudinary url
 export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-
+export const RESTAURANT_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6851243&lng=83.2035471";
 export const RestaurantList = [
     {
       info: {

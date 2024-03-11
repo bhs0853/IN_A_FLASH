@@ -1,146 +1,25 @@
 import React from "react";
-import "./Shimmer.css";
 
 const ShimmerUI = () => {
     return (
         <>
-            <div id="shimmer-container">
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
-                <div className="shimmer-card">
-                    <div className="shimmer-image" />
-                    <div className="shimmer-title" />
-                    <div className="shimmer-text1" />
-                    <div className="shimmer-text1" />
-                </div>
+            <div className="bg-gray-400 w-96 h-14 mx-[35%] my-10"></div>
+            <div className="flex flex-wrap overflow-hidden my-5 mx-48 gap-20">
+                
+                {
+                    Array(10).fill("").map(()=>{
+                        return (
+                            <div className="flex flex-col p-2 h-52 w-40 gap-3 bg-white border-gray-400">
+                                <div className="h-32 w-full bg-gray-500"></div>
+                                <div className="bg-gray-300  h-3 w-full"></div>
+                                <div className="bg-gray-500 h-3 w-2/4"></div>
+                                <div className="bg-gray-300 h-3 w-10"></div>
+                            </div>
+                        );
+                    })
+                }
             </div>
         </>
-        // {<>
-        //     <div id="shimmer-card">
-        //         <div id="shimmer-image"></div>
-        //         <div className="shimmer-text1"></div>
-        //         <div className="shimmer-text2"></div>
-        //         <div className="shimmer-text2"></div>
-        //     </div>
-        //     <div id="shimmer-card">
-        //         <div id="shimmer-image"></div>
-        //         <div className="shimmer-text1"></div>
-        //         <div className="shimmer-text2"></div>
-        //         <div className="shimmer-text2"></div>
-        //     </div>
-        //     <div id="shimmer-card">
-        //         <div id="shimmer-image"></div>
-        //         <div className="shimmer-text1"></div>
-        //         <div className="shimmer-text2"></div>
-        //         <div className="shimmer-text2"></div>
-        //     </div>
-        //     <div id="shimmer-card">
-        //         <div id="shimmer-image"></div>
-        //         <div className="shimmer-text1"></div>
-        //         <div className="shimmer-text2"></div>
-        //         <div className="shimmer-text2"></div>
-        //     </div>
-        //     <div id="shimmer-card">
-        //         <div id="shimmer-image"></div>
-        //         <div className="shimmer-text1"></div>
-        //         <div className="shimmer-text2"></div>
-        //         <div className="shimmer-text2"></div>
-        //     </div>
-        //     <div id="shimmer-card">
-        //         <div id="shimmer-image"></div>
-        //         <div className="shimmer-text1"></div>
-        //         <div className="shimmer-text2"></div>
-        //         <div className="shimmer-text2"></div>
-        //     </div>
-        // </>}
       );
 }
 export default ShimmerUI;
