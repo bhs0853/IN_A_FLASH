@@ -1,7 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ShimmerUI from "./Shimmer.js";
+import ShimmerUI from "./ShimmerUI.js";
+import imgurl from "../../assests/logo-trans-black.svg"
 import useOnline from "../utils/useOnline.js";
 import {search,fetchData} from "../utils/helper.js"
 
@@ -26,7 +27,6 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [allRestaurant, setAllRestaurant] = useState([]);
-    
     useEffect(() => {
         fetchData().then((response) => {
             setAllRestaurant(response);
@@ -75,7 +75,7 @@ const Body = () => {
                 })}
                 {filteredRestaurant?.map((Restaurant) => {
                     return <Link key={Restaurant.info.id+"3"} to={"/restaurants/"+Restaurant.info.id} ><RestaurantCard {...Restaurant.info} /></Link>
-                })}                   
+                })}
             </div>
         </>
     )

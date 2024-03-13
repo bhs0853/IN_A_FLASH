@@ -4,6 +4,8 @@
 //image cloudinary url
 export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const RESTAURANT_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6851243&lng=83.2035471";
+export const RESTAURANT_MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.6851243&lng=83.2035471&restaurantId=";
+export const ITEM_IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 export const RestaurantList = [
     {
       info: {
