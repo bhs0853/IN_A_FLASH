@@ -2,9 +2,6 @@ import Logo from "../../assests/logo-trans-black.svg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import { useSelector } from "react-redux";
-// import cartSlice from "../utils/cartSlice";
-
-//brainstorm hoe to pass the restaurant list to body
 
 const Header = () => {
   const isOnline = useOnline();
@@ -17,10 +14,8 @@ const Header = () => {
         </Link>
         <Link to={"/"}>
           <h3 className="text-neutral-700 font-mono py-5 font-bold">IN A FLASH</h3>
-        </Link>
-        
+        </Link> 
       </div>
-      
       <div  key="rightHeader" className="flex">
         <ul className="flex items-center text-neutral-700 text-[15px] font-medium">
           <li ><Link to="/" className="py-2 px-3 transition duration-500 hover:text-neutral-950 hover:bg-orange rounded-md">Home</Link></li>

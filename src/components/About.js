@@ -16,28 +16,29 @@ const About1 = () => {
 class About extends React.Component{
     constructor(props){
         super(props);
-        console.log("parent constructor");
+        // console.log("parent constructor");
         this.state = {
-            name : "sai",
+            name : "Hema Sai Bonda",
         }
     }
     componentDidMount(){
-        setTimeout(()=>{
-            this.setState({
-                name: "newName",
-            });
-            console.log("parent state changed");
-        },5000);
-        console.log("parent componentDidMount called");
+        // setTimeout(()=>{
+        //     this.setState({
+        //         name: "newName",
+        //     });
+        //     // console.log("parent state changed");
+        // },5000);
+        // console.log("parent componentDidMount called");
+    }
+    componentDidUpdate(){
+        // console.log("component did update - parent")
     }
     render(){
-        console.log("parent render called");
         return(
             <>
-                <h1>About Us {this.state.name}</h1>
+                <h1 className="text-3xl my-4">About Us </h1>
                 <p>In the phase of learning</p>
-                <Profile name="sai"/>
-                <Profile name="name" />
+                <Profile name={this.state.name}/>
             </>
         );
     }

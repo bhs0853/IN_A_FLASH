@@ -3,11 +3,8 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import ShimmerUI from "./ShimmerUI";
 import star from "../../assests/star.png";
 import quarter from "../../assests/time-quarter.svg";
-import rupee from "../../assests/rupee-symbol.svg";
-import { ITEM_IMG_URL } from "../config";
 import Category from "./Category";
 import ItemCard from "./ItemCard";
-
 
 const RestaurantMenu = () =>{
     const {resId} = useParams();
@@ -15,8 +12,8 @@ const RestaurantMenu = () =>{
     if(!restaurantData) return <ShimmerUI/>;
     // console.log(restaurantData[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories);
     const menuCategory = restaurantData[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    console.log(restaurantData);
-    console.log(menuCategory);
+    // console.log(restaurantData);
+    // console.log(menuCategory);
     const {name ,city,cuisines,areaName, sla,avgRatingString,totalRatingsString,expectationNotifiers,costForTwoMessage} = restaurantData[0]?.card?.card?.info;
     return(
     <div className="mx-auto w-2/5 mt-10 border-slate-950" >

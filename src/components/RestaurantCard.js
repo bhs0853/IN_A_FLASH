@@ -1,14 +1,6 @@
 import STAR_URL from "../../assests/star.png";
 import {IMG_URL} from "../config";
 
-
-/**
- * img
- * name
- * cuisines
- * rating
-*/
-
 const RestaurantCard = ({cloudinaryImageId, name, avgRating, costForTwo,cuisines, areaName}) => {
   const image = IMG_URL + cloudinaryImageId;
   return (
@@ -25,8 +17,4 @@ const RestaurantCard = ({cloudinaryImageId, name, avgRating, costForTwo,cuisines
   );
 };
 
-/**
- * rgb model 
- * 128 bit 
- */
 export default RestaurantCard;

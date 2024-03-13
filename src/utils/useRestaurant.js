@@ -9,7 +9,7 @@ const useRestaurant = () => {
     async function fetchData(){
         const response = await fetch(RESTAURANT_API);
         const jsonResponse = await response.json();
-        console.log(jsonResponse?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // console.log(jsonResponse?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setAllRestaurant(jsonResponse?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     return allRestaurant;

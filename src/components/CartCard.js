@@ -1,7 +1,6 @@
 import veg from "../../assests/veg-symbol.svg";
 import non_veg from "../../assests/non-veg-symbol.svg";
 const CartCard = (props) => {
-
     const {name,price,defaultPrice,isVeg,id} = props.info;
     return(
         <>

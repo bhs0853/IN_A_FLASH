@@ -2,33 +2,15 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ShimmerUI from "./ShimmerUI.js";
-import imgurl from "../../assests/logo-trans-black.svg"
 import useOnline from "../utils/useOnline.js";
 import {search,fetchData} from "../utils/helper.js"
-
-/**
- * 
- * how to pass local variables(useState) to other components -> for integrating search bar to the header
- * 
- * microservies and monolith -> how different they are.
- * 
- * fetch data from real swiggy api (api integration)
- * optional chaining - reduces errors
- * condtitional rendering - for different loading 
- * shimmer ui - load this when the data is being fetched from the actual api to make better user experience
- * useEffect - play with it (dependency array)
- * CORS , async await > promises why?
- * how to handle json data
- */
-
-
 
 const Body = () => {
     const [searchText, setSearchText] = useState("");
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [allRestaurant, setAllRestaurant] = useState([]);
     useEffect(() => {
-        fetchData().then((response) => {
+        fetchData()?.then((response) => {
             setAllRestaurant(response);
             setFilteredRestaurant(response);
         })

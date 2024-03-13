@@ -7,8 +7,6 @@ const Cart = () => {
     cartItems?.map((info)=>{
         totalCost += ((info.price)/100||(info.defaultPrice)/100)
     })
-    
-    console.log(cartItems);
     return(
         <div className="w-2/5 mx-auto">
             <div className="flex justify-between">

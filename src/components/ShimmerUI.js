@@ -1,11 +1,8 @@
-import React from "react";
-
 const ShimmerUI = () => {
     return (
         <>
             <div className="bg-gray-400 w-96 h-14 mx-[35%] my-10" key="shimmer-search"></div>
-            <div className="flex flex-wrap overflow-hidden my-5 mx-48 gap-20">
-                
+            <div className="flex flex-wrap overflow-hidden my-5 mx-48 gap-20"> 
                 {
                     Array(10).fill("").map((e,index)=>{
                         return (
