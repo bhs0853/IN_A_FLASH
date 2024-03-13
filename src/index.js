@@ -8,6 +8,9 @@ import Footer from "./components/Footer";
 import Profile from "./components/ProfileClassComponent";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 /**
  * Build a Food Ordering App
 Think of a cool name for your app - In a flash
@@ -46,11 +49,11 @@ Use Array.map to render all the restaurants
 
 const AppLayout = function () {
   return (
-    <div >
+    <Provider store={store}>
       <Header/>
       <Outlet />
       {/* {Footer} */}
-    </div>
+    </Provider>
   );
 };
 
@@ -81,6 +84,10 @@ const AppRouter = createBrowserRouter([
       {
         path : "/restaurants/:resId",
         element: <RestaurantMenu/>
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
       }
     ],
     // errorElement : <Error />

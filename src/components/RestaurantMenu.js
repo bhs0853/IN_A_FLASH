@@ -60,7 +60,7 @@ const RestaurantMenu = () =>{
                 menuCategory?.categories !=undefined ? 
                 menuCategory?.categories.map((e,index)=>{
                     return <Category menu= {menuCategory?.categories[index]} key={index +"1"}/>
-                }) : menuCategory.itemCards.map((e,index) => {
+                }) : menuCategory?.itemCards.map((e,index) => {
                     return <ItemCard info = {menuCategory?.itemCards[index].card.info} key={index+"2"}/>
                 })
             }

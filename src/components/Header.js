@@ -1,11 +1,14 @@
 import Logo from "../../assests/logo-trans-black.svg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import { useSelector } from "react-redux";
+// import cartSlice from "../utils/cartSlice";
 
 //brainstorm hoe to pass the restaurant list to body
 
 const Header = () => {
   const isOnline = useOnline();
+  const cartItems = useSelector(store => store.cart.items);
   return (
     <div className="flex bg-slate-100 h-16 justify-between px-8" key="header">
       <div className="flex gap-3" key="left-header">
@@ -23,7 +26,9 @@ const Header = () => {
           <li ><Link to="/" className="py-2 px-3 transition duration-500 hover:text-neutral-950 hover:bg-orange rounded-md">Home</Link></li>
           <li><Link to="/about" className="py-2 px-3 transition duration-500 hover:text-neutral-950 hover:bg-orange rounded-md">About us</Link></li>
           <li><Link to="/contactus" className="py-2 px-3 transition duration-500 hover:text-neutral-950 hover:bg-orange rounded-md">Contact us</Link></li>
-          <li><Link className="py-2 px-3 transition duration-500 hover:text-neutral-950 hover:bg-orange rounded-md">Cart</Link></li>
+          <li><Link to="/cart" className="py-2 px-3 transition duration-500 hover:text-neutral-950 hover:bg-orange rounded-md">cart
+            <span className="text-black font-bold">({cartItems?.length})</span>
+          </Link></li>
           <li className="text-[10px] pl-3 py-1">{isOnline? "🟢" : "🔴"}</li>
         </ul>
       </div>
